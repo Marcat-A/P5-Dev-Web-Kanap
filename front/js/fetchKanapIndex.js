@@ -10,7 +10,7 @@ fetch(`${BASEURL}/api/products`)
         // Récupération du point d'affichage
         {data.map((item) => (
             // Dissection du tableau
-           items.innerHTML += `<a href="./product.html?${item._id}">
+           items.innerHTML += `<a href="./product.html?id=${item._id}">
            <article>
              <img src="${item.imageUrl}" alt="Lorem ipsum dolor sit amet, ${item.name}" />
               <h3 class="productName">${item.name}</h3>
