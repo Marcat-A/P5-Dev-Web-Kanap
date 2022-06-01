@@ -2,7 +2,6 @@
 
 const BASEURL = "http://localhost:3000"
 // URL de base
-
 fetch(`${BASEURL}/api/products`)
 // Récupération de la BDD
 .then(
@@ -16,13 +15,12 @@ fetch(`${BASEURL}/api/products`)
         var description = document.getElementById('description');
         var image = document.querySelector('.item__img');
         var colors = document.getElementById('colors');
-        var title = document.getElementById('title');
+        var page = document.getElementById('page');
         // Récupération des points d'affichage
         
         {
             data.map((item) => {
                 // Dissection du tableau
-                
                 if(urlId === item._id){
                     // Concordance de l'ID du canapé et de l'URL
                     return(
@@ -30,14 +28,13 @@ fetch(`${BASEURL}/api/products`)
                     price.innerHTML = item.price,
                     description.innerHTML = item.description,
                     image.innerHTML = `<img src="${item.imageUrl}" alt=${item.altTxt} /> `,
-                    title.innerHTML = `Kanap - ${item.name}`,
+                    page.innerHTML = `Kanap - ${item.name}`,
                     item.colors.map((color) =>{colors.innerHTML += `<option value="${color}">${color}</option>`})
                     )
                     // Remplacement des divers objets 
                 }else{
                     return("")
                     }
-                    
             }
         )}
     })
